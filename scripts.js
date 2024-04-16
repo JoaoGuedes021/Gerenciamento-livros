@@ -1,3 +1,4 @@
+
 let livros = JSON.parse(localStorage.getItem('livros')) || []
 
 function salvarLivros() {
@@ -17,7 +18,6 @@ function addBook() {
     }
     livros.push(novoLivro)
     salvarLivros()
-    // limpando os campos
     titulo.value = ''
     autor.value = ''
     genero.value = ''
@@ -26,11 +26,9 @@ function addBook() {
 }
 
 function listarLivros(catalogoArray) {
-    // Pegando a div onde os livros serão carregados
     const catalogo = document.querySelector('.catalogo')
     catalogo.innerHTML = ''
     for (const livro of catalogoArray) {
-        // Para cada livro do catalogo será criado uma div
         const div = document.createElement('div')
         div.classList.add('livro')
         div.innerHTML = `<h3>${livro.titulo}</h3>
@@ -40,3 +38,14 @@ function listarLivros(catalogoArray) {
         catalogo.append(div)
     }
 }
+
+function searchBook() {
+    const termo = document.querySelector('#termo-busca').value
+    const resultados = livros.filter((book) => {
+        return book.autor === termo || book.titulo === termo || book.genero === termo
+    })
+    listarLivros(resultados)
+}
+
+
+listarLivros(livros)
