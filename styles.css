@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+  }
+  
+  h1 h2 {
+    text-align: center;
+  }
+  
+  input[type="text"], button{
+    margin: 5px;
+    padding: 8px;
+    width: calc(100%, 22px);
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  #catalogo {
+    margin-bottom: 20px;
+  }
+  
+  #form-cadastro #form-busca {
+    margin-bottom: 20px;
+  }
+  
+  .livro {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
